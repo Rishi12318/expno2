@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -6,230 +6,247 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid2';
 import { useRouter } from 'next/navigation';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
-import LoginIcon from '@mui/icons-material/Login';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import SecurityIcon from '@mui/icons-material/Security';
+import SpeedIcon from '@mui/icons-material/Speed';
 
 const features = [
   {
-    title: 'Analytics Dashboard',
-    description: 'Comprehensive dashboard with real-time analytics, user management, and data visualization.',
-    icon: <DashboardIcon sx={{ fontSize: 40 }} />,
+    title: 'Real-time Analytics',
+    description: 'Monitor your business metrics with comprehensive real-time dashboards and insights.',
+    icon: <TrendingUpIcon sx={{ fontSize: 48 }} />,
     path: '/dashboard',
+    color: '#0d9488',
   },
   {
-    title: 'User Profile',
-    description: 'Personalized user profiles with settings, preferences, and account management.',
-    icon: <PersonIcon sx={{ fontSize: 40 }} />,
+    title: 'User Profiles',
+    description: 'Manage team members with detailed profiles, roles, and permissions.',
+    icon: <PersonIcon sx={{ fontSize: 48 }} />,
     path: '/profile',
+    color: '#f97316',
   },
   {
-    title: 'Settings Panel',
-    description: 'System configuration, theme customization, and application preferences.',
-    icon: <SettingsIcon sx={{ fontSize: 40 }} />,
+    title: 'Advanced Settings',
+    description: 'Configure and customize every aspect of your platform to match your needs.',
+    icon: <SettingsIcon sx={{ fontSize: 48 }} />,
     path: '/settings',
+    color: '#8b5cf6',
   },
+];
+
+const stats = [
+  { label: 'Active Users', value: '12.5K', icon: <PersonIcon /> },
+  { label: 'Performance Score', value: '98.5%', icon: <SpeedIcon /> },
+  { label: 'Security Rating', value: 'A+', icon: <SecurityIcon /> },
 ];
 
 export default function HomePage() {
   const router = useRouter();
 
-  const handleNavigation = (path: string) => {
-    router.push(path);
-  };
-
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }}>
-      {/* Hero Section */}
-      <Box sx={{ textAlign: 'center', mb: 8 }}>
-        <Typography 
-          variant="h2" 
-          sx={{ 
-            fontWeight: 700,
-            color: 'text.primary',
-            mb: 2,
-            fontSize: { xs: '2.5rem', md: '3.5rem' },
-            letterSpacing: '-0.025em',
-          }}
-        >
-          Component Library
-        </Typography>
-        <Typography 
-          variant="h5" 
-          color="text.secondary"
-          sx={{ 
-            mb: 4,
-            fontWeight: 400,
-            fontSize: { xs: '1.125rem', md: '1.25rem' },
-            lineHeight: 1.6,
-          }}
-        >
-          A modern React application built with Material-UI components, featuring responsive design and clean architecture.
-        </Typography>
-        
-        <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Button
-            variant="contained"
-            size="large"
-            onClick={() => handleNavigation('/dashboard')}
+    <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', py: 8 }}>
+      <Container maxWidth='lg'>
+        <Box sx={{ textAlign: 'center', mb: 10 }}>
+          <Typography 
+            variant='h2' 
             sx={{ 
-              px: 4,
-              py: 1.5,
-              borderRadius: '10px',
-              fontWeight: 600,
-              textTransform: 'none',
-              fontSize: '1rem',
+              fontWeight: 800,
+              mb: 3,
+              background: 'linear-gradient(135deg, #0d9488 0%, #f97316 100%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              letterSpacing: '-0.03em',
             }}
           >
-            View Dashboard
-          </Button>
-          <Button
-            variant="outlined"
-            size="large"
-            startIcon={<LoginIcon />}
-            onClick={() => handleNavigation('/login')}
+            Welcome to Component Library
+          </Typography>
+          <Typography 
+            variant='h5' 
+            color='text.secondary' 
             sx={{ 
-              px: 4,
-              py: 1.5,
-              borderRadius: '10px',
-              fontWeight: 600,
-              textTransform: 'none',
-              fontSize: '1rem',
-              borderColor: 'primary.main',
+              mb: 5,
+              fontWeight: 500,
+              maxWidth: '700px',
+              mx: 'auto',
+              fontSize: { xs: '1.125rem', md: '1.375rem' },
             }}
           >
-            Login
-          </Button>
-        </Box>
-      </Box>
-
-      {/* Features Grid */}
-      <Grid container spacing={4} sx={{ mb: 6 }}>
-        {features.map((feature, index) => (
-          <Grid size={{ xs: 12, md: 4 }} key={index}>
-            <Card 
-              sx={{ 
-                height: '100%',
-                cursor: 'pointer',
-                border: '1px solid',
-                borderColor: 'divider',
-                borderRadius: '12px',
-                boxShadow: '0 1px 3px 0 rgba(45, 55, 72, 0.1)',
-                transition: 'all 0.2s ease-in-out',
-                '&:hover': {
-                  boxShadow: '0 4px 6px -1px rgba(45, 55, 72, 0.1)',
-                  transform: 'translateY(-2px)',
-                  borderColor: 'primary.main',
-                },
-              }}
-              onClick={() => handleNavigation(feature.path)}
-            >
-              <CardContent sx={{ p: 4, textAlign: 'center' }}>
-                <Box 
-                  sx={{ 
-                    mb: 3,
-                    color: 'primary.main',
-                    display: 'flex',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {feature.icon}
+            A powerful platform built with modern component libraries for seamless user experience
+          </Typography>
+          
+          <Grid container spacing={3} sx={{ mb: 6, maxWidth: '800px', mx: 'auto' }}>
+            {stats.map((stat, idx) => (
+              <Grid size={{ xs: 12, sm: 4 }} key={idx}>
+                <Box sx={{ textAlign: 'center' }}>
+                  <Box sx={{ color: 'primary.main', mb: 1 }}>{stat.icon}</Box>
+                  <Typography variant='h4' sx={{ fontWeight: 700, color: 'text.primary', mb: 0.5 }}>
+                    {stat.value}
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary' sx={{ fontWeight: 500 }}>
+                    {stat.label}
+                  </Typography>
                 </Box>
-                <Typography 
-                  variant="h6" 
-                  sx={{ 
-                    fontWeight: 600,
-                    mb: 2,
-                    color: 'text.primary',
-                    fontSize: '1.125rem',
-                    letterSpacing: '-0.025em',
-                  }}
-                >
-                  {feature.title}
-                </Typography>
-                <Typography 
-                  variant="body2" 
-                  color="text.secondary"
-                  sx={{ 
-                    lineHeight: 1.6,
-                    fontSize: '0.875rem',
-                  }}
-                >
-                  {feature.description}
-                </Typography>
-              </CardContent>
-            </Card>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
 
-      {/* Technology Stack */}
-      <Paper 
-        sx={{ 
-          p: 4,
-          textAlign: 'center',
-          bgcolor: 'grey.50',
-          border: '1px solid',
-          borderColor: 'divider',
-          borderRadius: '12px',
-        }}
-      >
-        <Typography 
-          variant="h5" 
-          sx={{ 
-            fontWeight: 600,
-            mb: 2,
-            color: 'text.primary',
-            fontSize: '1.25rem',
-            letterSpacing: '-0.025em',
-          }}
-        >
-          Built With Modern Technologies
-        </Typography>
-        <Typography 
-          variant="body1" 
-          color="text.secondary"
-          sx={{ 
-            mb: 3,
-            fontSize: '0.875rem',
-            lineHeight: 1.6,
-          }}
-        >
-          This application showcases the power of Next.js 15, TypeScript, and Material-UI working together to create beautiful, functional user interfaces.
-        </Typography>
-        <Box 
-          sx={{ 
-            display: 'flex', 
-            gap: 2, 
-            justifyContent: 'center', 
-            flexWrap: 'wrap',
-          }}
-        >
-          {['Next.js 15', 'TypeScript', 'Material-UI', 'React'].map((tech) => (
-            <Box
-              key={tech}
+          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Button
+              variant='contained'
+              size='large'
+              onClick={() => router.push('/dashboard')}
+              startIcon={<DashboardIcon />}
               sx={{
-                px: 3,
-                py: 1,
-                bgcolor: 'background.paper',
-                border: '1px solid',
-                borderColor: 'divider',
-                borderRadius: '20px',
-                fontSize: '0.8125rem',
-                fontWeight: 500,
-                color: 'text.primary',
+                px: 4,
+                py: 1.5,
+                fontSize: '1.125rem',
+                fontWeight: 600,
+                borderRadius: '14px',
+                background: 'linear-gradient(135deg, #0d9488 0%, #14b8a6 100%)',
               }}
             >
-              {tech}
-            </Box>
-          ))}
+              Explore Dashboard
+            </Button>
+            <Button
+              variant='outlined'
+              size='large'
+              onClick={() => router.push('/login')}
+              sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: '1.125rem',
+                fontWeight: 600,
+                borderRadius: '14px',
+                borderWidth: '2px',
+              }}
+            >
+              Get Started
+            </Button>
+          </Box>
         </Box>
-      </Paper>
-    </Container>
+
+        <Box sx={{ mb: 8 }}>
+          <Typography 
+            variant='h3' 
+            sx={{ 
+              textAlign: 'center',
+              fontWeight: 700,
+              mb: 2,
+              color: 'text.primary',
+              fontSize: { xs: '2rem', md: '2.5rem' },
+            }}
+          >
+            Platform Features
+          </Typography>
+          <Typography 
+            variant='body1' 
+            color='text.secondary'
+            sx={{ 
+              textAlign: 'center',
+              mb: 6,
+              fontSize: '1.125rem',
+              maxWidth: '600px',
+              mx: 'auto',
+            }}
+          >
+            Everything you need to manage your business efficiently
+          </Typography>
+
+          <Grid container spacing={4}>
+            {features.map((feature, index) => (
+              <Grid size={{ xs: 12, md: 4 }} key={index}>
+                <Card
+                  sx={{
+                    height: '100%',
+                    borderRadius: '24px',
+                    border: '2px solid',
+                    borderColor: 'divider',
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => router.push(feature.path)}
+                >
+                  <CardContent sx={{ p: 4, textAlign: 'center' }}>
+                    <Box
+                      sx={{
+                        width: 80,
+                        height: 80,
+                        borderRadius: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mx: 'auto',
+                        mb: 3,
+                        background: linear-gradient(135deg, 20 0%, 40 100%),
+                        color: feature.color,
+                      }}
+                    >
+                      {feature.icon}
+                    </Box>
+                    <Typography
+                      variant='h5'
+                      sx={{
+                        fontWeight: 700,
+                        mb: 2,
+                        color: 'text.primary',
+                      }}
+                    >
+                      {feature.title}
+                    </Typography>
+                    <Typography
+                      variant='body1'
+                      color='text.secondary'
+                      sx={{ lineHeight: 1.7, fontWeight: 500 }}
+                    >
+                      {feature.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        <Box
+          sx={{
+            textAlign: 'center',
+            py: 8,
+            px: 4,
+            borderRadius: '32px',
+            background: 'linear-gradient(135deg, #0d9488 0%, #14b8a6 100%)',
+            color: 'white',
+          }}
+        >
+          <Typography variant='h3' sx={{ fontWeight: 700, mb: 2, fontSize: { xs: '2rem', md: '2.75rem' } }}>
+            Ready to Get Started?
+          </Typography>
+          <Typography variant='h6' sx={{ mb: 4, opacity: 0.95, fontWeight: 500 }}>
+            Join thousands of teams already using our platform
+          </Typography>
+          <Button
+            variant='contained'
+            size='large'
+            onClick={() => router.push('/register')}
+            sx={{
+              px: 5,
+              py: 2,
+              fontSize: '1.125rem',
+              fontWeight: 600,
+              borderRadius: '14px',
+              bgcolor: 'white',
+              color: 'primary.main',
+            }}
+          >
+            Create Account
+          </Button>
+        </Box>
+      </Container>
+    </Box>
   );
 }
-
