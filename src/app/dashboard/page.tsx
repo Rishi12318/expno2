@@ -18,75 +18,83 @@ import { StatCardData, TableRow } from '@/types/dashboard';
 
 const statCardsData: StatCardData[] = [
   {
-    title: 'Total Users',
-    value: '2,543',
-    icon: <PeopleIcon />,
-    color: '#2d3748',
-    description: '+12% from last month',
-  },
-  {
     title: 'Active Projects',
     value: '127',
     icon: <FolderIcon />,
-    color: '#2d3748',
+    color: '#0d9488',
     description: '23 pending approval',
   },
   {
     title: 'Revenue',
     value: '₹45.2L',
     icon: <AttachMoneyIcon />,
-    color: '#2d3748',
+    color: '#0d9488',
     description: '+18% from last quarter',
   },
   {
     title: 'Completion Rate',
     value: '94.3%',
     icon: <TrendingUpIcon />,
-    color: '#2d3748',
+    color: '#0d9488',
     description: 'Above target',
+  },
+  {
+    title: 'Total Users',
+    value: '2,543',
+    icon: <PeopleIcon />,
+    color: '#0d9488',
+    description: '+12% from last month',
   },
 ];
 
 const tableData: TableRow[] = [
   {
     id: 1,
-    name: 'Rajesh Kumar',
-    email: 'rajesh.kumar@example.com',
+    name: 'Sarah Mitchell',
+    email: 'sarah.mitchell@company.io',
     role: 'Admin',
     status: 'Active',
-    joinDate: '2024-01-15',
+    joinDate: '2023-08-15',
   },
   {
     id: 2,
-    name: 'Priya Sharma',
-    email: 'priya.sharma@example.com',
+    name: 'Marcus Chen',
+    email: 'marcus.chen@company.io',
     role: 'Developer',
     status: 'Active',
-    joinDate: '2024-02-20',
+    joinDate: '2023-11-22',
   },
   {
     id: 3,
-    name: 'Amit Patel',
-    email: 'amit.patel@example.com',
+    name: 'Elena Rodriguez',
+    email: 'elena.rodriguez@company.io',
     role: 'Designer',
     status: 'Pending',
-    joinDate: '2024-03-10',
+    joinDate: '2024-01-08',
   },
   {
     id: 4,
-    name: 'Sneha Verma',
-    email: 'sneha.verma@example.com',
+    name: 'David Thompson',
+    email: 'david.thompson@company.io',
     role: 'Manager',
     status: 'Active',
-    joinDate: '2024-01-05',
+    joinDate: '2023-07-12',
   },
   {
     id: 5,
-    name: 'Karan Singh',
-    email: 'karan.singh@example.com',
+    name: 'Jessica Park',
+    email: 'jessica.park@company.io',
     role: 'Developer',
     status: 'Inactive',
-    joinDate: '2023-11-22',
+    joinDate: '2023-09-05',
+  },
+  {
+    id: 6,
+    name: 'Alex Johnson',
+    email: 'alex.johnson@company.io',
+    role: 'Analyst',
+    status: 'Active',
+    joinDate: '2024-01-20',
   },
 ];
 
@@ -110,22 +118,23 @@ export default function DashboardPage() {
     <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ mb: 4 }}>
         <Typography 
-          variant="h4" 
+          variant="h3" 
           sx={{ 
-            fontWeight: 600,
+            fontWeight: 700,
             color: 'text.primary',
-            mb: 1,
-            letterSpacing: '-0.025em',
+            mb: 2,
+            letterSpacing: '-0.03em',
+            fontSize: '2.25rem',
           }}
         >
-          Analytics Dashboard
+          Project Overview
         </Typography>
         <Typography 
           variant="body1" 
           color="text.secondary"
-          sx={{ fontSize: '1rem', mb: 3 }}
+          sx={{ fontSize: '1.125rem', mb: 4, fontWeight: 500 }}
         >
-          Welcome back! Here's what's happening with your platform today.
+          Track your team's progress and monitor key performance metrics in real-time.
         </Typography>
         <Button
           variant="contained"
@@ -143,36 +152,37 @@ export default function DashboardPage() {
         </Button>
       </Box>
 
-      <Grid container spacing={3} sx={{ mb: 4 }}>
+      <Grid container spacing={4} sx={{ mb: 6 }}>
         {statCardsData.map((stat, index) => (
-          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+          <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={index}>
             <StatCard data={stat} />
           </Grid>
         ))}
       </Grid>
 
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: 4, mt: 6 }}>
         <Typography 
-          variant="h5" 
+          variant="h4" 
           sx={{ 
-            fontWeight: 600,
+            fontWeight: 700,
             color: 'text.primary',
-            mb: 1,
-            fontSize: '1.25rem',
-            letterSpacing: '-0.025em',
+            mb: 1.5,
+            fontSize: '1.75rem',
+            letterSpacing: '-0.02em',
           }}
         >
-          User Management
+          Team Members
         </Typography>
         <Typography 
-          variant="body2" 
+          variant="body1" 
           color="text.secondary" 
           sx={{ 
-            mb: 2,
-            fontSize: '0.875rem',
+            mb: 3,
+            fontSize: '1rem',
+            fontWeight: 500,
           }}
         >
-          Overview of all registered users in the system
+          Manage and monitor all team members across different departments
         </Typography>
       </Box>
 
