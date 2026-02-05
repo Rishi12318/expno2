@@ -19,7 +19,7 @@ const features = [
   {
     title: 'Real-time Analytics',
     description: 'Monitor your business metrics with comprehensive real-time dashboards and insights.',
-    icon: <TrendingUpIcon sx={{ fontSize: 48  />,
+    icon: <TrendingUpIcon sx={{ fontSize: 48 }} />,
     path: '/dashboard',
     color: '#0d9488',
   },
@@ -250,3 +250,4 @@ export default function HomePage() {
     </Box>
   );
 }
+
