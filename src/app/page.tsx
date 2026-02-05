@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -50,10 +50,10 @@ export default function HomePage() {
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', py: 8 }}>
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 10 }}>
           <Typography 
-            variant='h2' 
+            variant="h2" 
             sx={{ 
               fontWeight: 800,
               mb: 3,
@@ -68,8 +68,8 @@ export default function HomePage() {
             Welcome to Component Library
           </Typography>
           <Typography 
-            variant='h5' 
-            color='text.secondary' 
+            variant="h5" 
+            color="text.secondary" 
             sx={{ 
               mb: 5,
               fontWeight: 500,
@@ -86,10 +86,10 @@ export default function HomePage() {
               <Grid size={{ xs: 12, sm: 4 }} key={idx}>
                 <Box sx={{ textAlign: 'center' }}>
                   <Box sx={{ color: 'primary.main', mb: 1 }}>{stat.icon}</Box>
-                  <Typography variant='h4' sx={{ fontWeight: 700, color: 'text.primary', mb: 0.5 }}>
+                  <Typography variant="h4" sx={{ fontWeight: 700, color: 'text.primary', mb: 0.5 }}>
                     {stat.value}
                   </Typography>
-                  <Typography variant='body2' color='text.secondary' sx={{ fontWeight: 500 }}>
+                  <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 500 }}>
                     {stat.label}
                   </Typography>
                 </Box>
@@ -99,8 +99,8 @@ export default function HomePage() {
 
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Button
-              variant='contained'
-              size='large'
+              variant="contained"
+              size="large"
               onClick={() => router.push('/dashboard')}
               startIcon={<DashboardIcon />}
               sx={{
@@ -115,8 +115,8 @@ export default function HomePage() {
               Explore Dashboard
             </Button>
             <Button
-              variant='outlined'
-              size='large'
+              variant="outlined"
+              size="large"
               onClick={() => router.push('/login')}
               sx={{
                 px: 4,
@@ -134,7 +134,7 @@ export default function HomePage() {
 
         <Box sx={{ mb: 8 }}>
           <Typography 
-            variant='h3' 
+            variant="h3" 
             sx={{ 
               textAlign: 'center',
               fontWeight: 700,
@@ -146,8 +146,8 @@ export default function HomePage() {
             Platform Features
           </Typography>
           <Typography 
-            variant='body1' 
-            color='text.secondary'
+            variant="body1" 
+            color="text.secondary"
             sx={{ 
               textAlign: 'center',
               mb: 6,
@@ -183,14 +183,14 @@ export default function HomePage() {
                         justifyContent: 'center',
                         mx: 'auto',
                         mb: 3,
-                        background: linear-gradient(135deg, 20 0%, 40 100%),
+                        bgcolor: `${feature.color}20`,
                         color: feature.color,
                       }}
                     >
                       {feature.icon}
                     </Box>
                     <Typography
-                      variant='h5'
+                      variant="h5"
                       sx={{
                         fontWeight: 700,
                         mb: 2,
@@ -200,8 +200,8 @@ export default function HomePage() {
                       {feature.title}
                     </Typography>
                     <Typography
-                      variant='body1'
-                      color='text.secondary'
+                      variant="body1"
+                      color="text.secondary"
                       sx={{ lineHeight: 1.7, fontWeight: 500 }}
                     >
                       {feature.description}
@@ -223,15 +223,15 @@ export default function HomePage() {
             color: 'white',
           }}
         >
-          <Typography variant='h3' sx={{ fontWeight: 700, mb: 2, fontSize: { xs: '2rem', md: '2.75rem' } }}>
+          <Typography variant="h3" sx={{ fontWeight: 700, mb: 2, fontSize: { xs: '2rem', md: '2.75rem' } }}>
             Ready to Get Started?
           </Typography>
-          <Typography variant='h6' sx={{ mb: 4, opacity: 0.95, fontWeight: 500 }}>
+          <Typography variant="h6" sx={{ mb: 4, opacity: 0.95, fontWeight: 500 }}>
             Join thousands of teams already using our platform
           </Typography>
           <Button
-            variant='contained'
-            size='large'
+            variant="contained"
+            size="large"
             onClick={() => router.push('/register')}
             sx={{
               px: 5,
