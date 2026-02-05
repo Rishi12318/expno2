@@ -26,14 +26,14 @@ const features = [
   {
     title: 'User Profiles',
     description: 'Manage team members with detailed profiles, roles, and permissions.',
-    icon: <PersonIcon sx={{ fontSize: 48  />,
+    icon: <PersonIcon sx={{ fontSize: 48 }} />,
     path: '/profile',
     color: '#f97316',
   },
   {
     title: 'Advanced Settings',
     description: 'Configure and customize every aspect of your platform to match your needs.',
-    icon: <SettingsIcon sx={{ fontSize: 48  />,
+    icon: <SettingsIcon sx={{ fontSize: 48 }} />,
     path: '/settings',
     color: '#8b5cf6',
   },
@@ -250,4 +250,5 @@ export default function HomePage() {
     </Box>
   );
 }
+
 
