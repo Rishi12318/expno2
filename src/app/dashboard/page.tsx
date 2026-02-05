@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -10,20 +10,13 @@ import PeopleIcon from '@mui/icons-material/People';
 import FolderIcon from '@mui/icons-material/Folder';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import AddIcon from '@mui/icons-material/Add';
+import RefreshIcon from '@mui/icons-material/Refresh';
 import StatCard from '@/components/StatCard';
 import DataTable from '@/components/DataTable';
 import ConfirmDialog from '@/components/ConfirmDialog';
 import { StatCardData, TableRow } from '@/types/dashboard';
 
 const statCardsData: StatCardData[] = [
-  {
-    title: 'Active Projects',
-    value: '127',
-    icon: <FolderIcon />,
-    color: '#0d9488',
-    description: '23 pending approval',
-  },
   {
     title: 'Revenue',
     value: '₹45.2L',
@@ -32,11 +25,11 @@ const statCardsData: StatCardData[] = [
     description: '+18% from last quarter',
   },
   {
-    title: 'Completion Rate',
-    value: '94.3%',
-    icon: <TrendingUpIcon />,
+    title: 'Active Projects',
+    value: '127',
+    icon: <FolderIcon />,
     color: '#0d9488',
-    description: 'Above target',
+    description: '23 pending approval',
   },
   {
     title: 'Total Users',
@@ -44,6 +37,13 @@ const statCardsData: StatCardData[] = [
     icon: <PeopleIcon />,
     color: '#0d9488',
     description: '+12% from last month',
+  },
+  {
+    title: 'Completion Rate',
+    value: '94.3%',
+    icon: <TrendingUpIcon />,
+    color: '#0d9488',
+    description: 'Above target',
   },
 ];
 
@@ -101,12 +101,12 @@ const tableData: TableRow[] = [
 export default function DashboardPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const handleAddNew = () => {
+  const handleRefresh = () => {
     setDialogOpen(true);
   };
 
   const handleConfirm = () => {
-    console.log('New item added');
+    console.log('Data refreshed');
     setDialogOpen(false);
   };
 
@@ -116,43 +116,48 @@ export default function DashboardPage() {
 
   return (
     <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-      <Box sx={{ mb: 4 }}>
-        <Typography 
-          variant="h3" 
-          sx={{ 
-            fontWeight: 700,
-            color: 'text.primary',
-            mb: 2,
-            letterSpacing: '-0.03em',
-            fontSize: '2.25rem',
-          }}
-        >
-          Project Overview
-        </Typography>
-        <Typography 
-          variant="body1" 
-          color="text.secondary"
-          sx={{ fontSize: '1.125rem', mb: 4, fontWeight: 500 }}
-        >
-          Track your team's progress and monitor key performance metrics in real-time.
-        </Typography>
-        <Button
-          variant="contained"
-          startIcon={<AddIcon />}
-          onClick={handleAddNew}
-          sx={{ 
-            borderRadius: '8px',
-            fontWeight: 500,
-            textTransform: 'none',
-            px: 3,
-            py: 1,
-          }}
-        >
-          Add New
-        </Button>
+      <Box sx={{ mb: 5 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+          <Box>
+            <Typography 
+              variant="h3" 
+              sx={{ 
+                fontWeight: 700,
+                color: 'text.primary',
+                mb: 1,
+                letterSpacing: '-0.03em',
+                fontSize: { xs: '2rem', md: '2.5rem' },
+              }}
+            >
+              Project Overview
+            </Typography>
+            <Typography 
+              variant="body1" 
+              color="text.secondary"
+              sx={{ fontSize: '1.125rem', fontWeight: 500 }}
+            >
+              Track your team's progress and monitor key performance metrics in real-time
+            </Typography>
+          </Box>
+          <Button
+            variant="contained"
+            startIcon={<RefreshIcon />}
+            onClick={handleRefresh}
+            sx={{ 
+              borderRadius: '12px',
+              fontWeight: 600,
+              textTransform: 'none',
+              px: 3,
+              py: 1.5,
+              background: 'linear-gradient(135deg, #0d9488 0%, #14b8a6 100%)',
+            }}
+          >
+            Refresh Data
+          </Button>
+        </Box>
       </Box>
 
-      <Grid container spacing={4} sx={{ mb: 6 }}>
+      <Grid container spacing={4} sx={{ mb: 7 }}>
         {statCardsData.map((stat, index) => (
           <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={index}>
             <StatCard data={stat} />
@@ -160,14 +165,14 @@ export default function DashboardPage() {
         ))}
       </Grid>
 
-      <Box sx={{ mb: 4, mt: 6 }}>
+      <Box sx={{ mb: 4, mt: 7 }}>
         <Typography 
           variant="h4" 
           sx={{ 
             fontWeight: 700,
             color: 'text.primary',
             mb: 1.5,
-            fontSize: '1.75rem',
+            fontSize: '1.875rem',
             letterSpacing: '-0.02em',
           }}
         >
@@ -178,7 +183,7 @@ export default function DashboardPage() {
           color="text.secondary" 
           sx={{ 
             mb: 3,
-            fontSize: '1rem',
+            fontSize: '1.0625rem',
             fontWeight: 500,
           }}
         >
@@ -190,8 +195,8 @@ export default function DashboardPage() {
 
       <ConfirmDialog
         open={dialogOpen}
-        title="Add New Item"
-        message="Are you sure you want to add a new item to the system?"
+        title="Refresh Dashboard Data"
+        message="Are you sure you want to refresh all dashboard data? This will update all metrics and team information."
         onConfirm={handleConfirm}
         onCancel={handleCancel}
       />
