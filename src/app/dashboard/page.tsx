@@ -115,9 +115,9 @@ export default function DashboardPage() {
   };
 
   return (
-    <Container maxWidth="xl" sx={{ mt: 4, mb: 4 >
-      <Box sx={{ mb: 5 >
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 >
+    <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+      <Box sx={{ mb: 5 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
           <Box>
             <Typography 
               variant="h3" 
@@ -126,15 +126,15 @@ export default function DashboardPage() {
                 color: 'text.primary',
                 mb: 1,
                 letterSpacing: '-0.03em',
-                fontSize: { xs: '2rem', md= '2.5rem' },
-              
+                fontSize: { xs: '2rem', md: '2.5rem' },
+              }}
             >
               Project Overview
             </Typography>
             <Typography 
               variant="body1" 
               color="text.secondary"
-              sx={{ fontSize: '1.125rem', fontWeight: 500 
+              sx={{ fontSize: '1.125rem', fontWeight: 500 }}
             >
               Track your team's progress and monitor key performance metrics in real-time
             </Typography>
@@ -150,22 +150,22 @@ export default function DashboardPage() {
               px: 3,
               py: 1.5,
               background: 'linear-gradient(135deg, #0d9488 0%, #14b8a6 100%)',
-            
+            }}
           >
             Refresh Data
           </Button>
         </Box>
       </Box>
 
-      <Grid container spacing={4} sx={{ mb: 7 >
+      <Grid container spacing={4} sx={{ mb: 7 }}>
         {statCardsData.map((stat, index) => (
-          <Grid item xs= 12, sm= 6, lg= 3  key={index}>
+          <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={index}>
             <StatCard data={stat} />
           </Grid>
         ))}
       </Grid>
 
-      <Box sx={{ mb: 4, mt: 7 >
+      <Box sx={{ mb: 4, mt: 7 }}>
         <Typography 
           variant="h4" 
           sx={{ 
@@ -174,7 +174,7 @@ export default function DashboardPage() {
             mb: 1.5,
             fontSize: '1.875rem',
             letterSpacing: '-0.02em',
-          
+          }}
         >
           Team Members
         </Typography>
@@ -185,7 +185,7 @@ export default function DashboardPage() {
             mb: 3,
             fontSize: '1.0625rem',
             fontWeight: 500,
-          
+          }}
         >
           Manage and monitor all team members across different departments
         </Typography>
