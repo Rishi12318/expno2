@@ -1,10 +1,12 @@
-# CU Component Library Dashboard
+# Component Library Dashboard
 
-## 📋 Project Overview
+## 📋 Project Information
 
-**Experiment 2: Design UI using Component Libraries**
+**Student Name:** Rishika Jagota  
+**Email:** 23bai70491@cuchd.in  
+**Project:** UI Design with Component Libraries
 
-A production-grade Next.js TypeScript application demonstrating comprehensive UI component library implementation using Material UI. Built for university practical evaluation showcasing modern web development best practices.
+A modern Next.js TypeScript application showcasing comprehensive Material UI implementation with responsive design, authentication flows, and interactive dashboard components.
 
 ---
 
@@ -213,25 +215,41 @@ npm start
 
 ---
 
-## 🌐 Deployment
+## 🌐 Deployment on Vercel
 
-### Vercel Deployment
+This project is optimized for deployment on Vercel with zero configuration required.
+
+### Quick Deploy
 
 1. **Push to GitHub:**
    ```bash
    git init
    git add .
-   git commit -m "Complete Next.js MUI Dashboard"
-   git push
+   git commit -m "Initial commit - Next.js MUI Dashboard"
+   git branch -M main
+   git remote add origin <your-repo-url>
+   git push -u origin main
    ```
 
 2. **Deploy on Vercel:**
-   - Visit [vercel.com](https://vercel.com)
-   - Import GitHub repository
-   - Auto-detected Next.js settings
-   - Deploy
+   - Visit [vercel.com/new](https://vercel.com/new)
+   - Sign in with GitHub
+   - Import your repository
+   - Click "Deploy" (Vercel auto-detects Next.js settings)
+   - Your app will be live in ~2 minutes
 
-**Live Demo:** `[Your Vercel URL will appear here]`
+### Alternative: Vercel CLI
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
+
+### Environment Setup
+No environment variables required for this version. The project runs with default configurations.
+
+**Live Demo:** Your Vercel deployment URL will be generated automatically
 
 ---
 
@@ -344,22 +362,26 @@ npm start
 
 ---
 
-## 🎓 Academic Compliance
+## 🎓 Academic Information
 
+**Student Name:** Rishika Jagota  
+**University ID:** 23BAI70491  
+**Email:** 23bai70491@cuchd.in  
 **Course:** Full Stack Web Development  
-**Experiment:** 2 - Design UI using Component Libraries  
-**Submitted by:** Harsh Jain  
-**University:** Chandigarh University  
+**Institution:** Chandigarh University  
+
+**Project:** UI Design using Component Libraries  
+**Submission Date:** February 2026
 
 **Learning Outcomes Achieved:**
-1. ✅ Understanding of component-based architecture
-2. ✅ Implementation of responsive design principles
+1. ✅ Component-based architecture implementation
+2. ✅ Responsive design principles with Material UI
 3. ✅ Form validation and user input handling
-4. ✅ State management in React
-5. ✅ Material Design implementation
-6. ✅ TypeScript for type-safe development
-7. ✅ Next.js App Router navigation
-8. ✅ Accessibility best practices
+4. ✅ React state management
+5. ✅ TypeScript for type-safe development
+6. ✅ Next.js App Router navigation
+7. ✅ Accessibility best practices (ARIA, keyboard navigation)
+8. ✅ Production deployment on Vercel
 
 ---
 
@@ -378,9 +400,10 @@ npm start
 
 ## 📞 Contact
 
-**Developer:** Harsh Jain  
-**Email:** harsh.jain@university.edu  
-**GitHub:** [Your GitHub Profile]
+**Rishika Jagota**  
+📧 Email: 23bai70491@cuchd.in  
+🎓 University ID: 23BAI70491  
+🏫 Chandigarh University
 
 ---
 
@@ -392,5 +415,4 @@ This project is created for educational purposes as part of university coursewor
 
 **Last Updated:** February 2026  
 **Version:** 1.0.0  
-**Status:** ✅ Evaluation Ready
-
+**Status:** ✅ Production Ready | Vercel Deployable
