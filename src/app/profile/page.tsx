@@ -31,10 +31,10 @@ export default function ProfilePage() {
           </Avatar>
           <Box>
             <Typography variant="h5" fontWeight="bold">
-              Harsh Jain
+              Rishika Jagota
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              harsh.jain@university.edu
+              23bai70491@cuchd.in
             </Typography>
             <Box sx={{ mt: 1 }}>
               <Chip label="Active" color="success" size="small" />
